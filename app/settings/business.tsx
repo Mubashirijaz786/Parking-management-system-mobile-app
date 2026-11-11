@@ -1,0 +1,8 @@
+import { useRouter } from 'expo-router';
+import { useState } from 'react';
+import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Button, Field } from '@/src/components/ui';
+import { getSettings, updateBusiness } from '@/src/database/repository';
+import { colors, common, spacing } from '@/src/theme';
+
+export default function BusinessSettings(){const router=useRouter();const s=getSettings();const [name,setName]=useState(s.business_name);const [contact,setContact]=useState(s.contact??'');const [footer,setFooter]=useState(s.receipt_footer);const [capacity,setCapacity]=useState(String(s.capacity));const save=()=>{updateBusiness(name,contact,footer,Number(capacity)||100);Alert.alert('Saved','Business settings updated locally.',[{text:'Done',onPress:()=>router.back()}])};return <ScrollView style={common.screen} contentContainerStyle={common.content}><Pressable onPress={()=>router.back()}><Text style={{color:colors.primary,fontWeight:'700'}}>‹  Settings</Text></Pressable><Text style={[common.title,{marginTop:spacing.lg}]}>Business settings</Text><Text style={[common.muted,{marginTop:5,marginBottom:spacing.xl}]}>These details appear on receipts and the dashboard.</Text><View style={{gap:16}}><Field label="Parking business name" value={name} onChangeText={setName}/><Field label="Contact number" value={contact} onChangeText={setContact} keyboardType="phone-pad" placeholder="Optional"/><Field label="Receipt footer" value={footer} onChangeText={setFooter} multiline/><Field label="Total parking capacity" value={capacity} onChangeText={setCapacity} keyboardType="number-pad"/><Button title="Save settings" onPress={save}/></View></ScrollView>}

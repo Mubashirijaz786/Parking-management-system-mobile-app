@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+
+# Expo
+.expo/
+.expo-export-check*
+dist/
+web-build/
+
+# Generated
+expo-env.d.ts
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Environment
+.env*.local
+backend/.env
+
+# Temporary files & Dev
+.tmp/
+.tmp*
+.tmp-pg-dev/
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+config.bat

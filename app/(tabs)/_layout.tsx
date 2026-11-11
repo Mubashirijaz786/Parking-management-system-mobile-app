@@ -1,0 +1,5 @@
+import { Tabs } from 'expo-router';
+import { House, CarFront, FileText, BarChart3, MoreHorizontal } from 'lucide-react-native';
+import { colors } from '@/src/theme';
+
+export default function TabsLayout() { return <Tabs screenOptions={{ tabBarActiveTintColor:colors.primary, tabBarInactiveTintColor:colors.secondary, tabBarStyle:{height:66,paddingBottom:8,paddingTop:6,borderTopColor:colors.border,backgroundColor:colors.surface}, tabBarLabelStyle:{fontSize:11,fontWeight:'700'}, headerShown:false }}><Tabs.Screen name="index" options={{title:'Home',tabBarIcon:({color})=><House size={21} color={color}/>}}/><Tabs.Screen name="active" options={{title:'Active',tabBarIcon:({color})=><CarFront size={21} color={color}/>}}/><Tabs.Screen name="history" options={{title:'Records',tabBarIcon:({color})=><FileText size={21} color={color}/>}}/><Tabs.Screen name="reports" options={{title:'Reports',tabBarIcon:({color})=><BarChart3 size={21} color={color}/>}}/><Tabs.Screen name="settings" options={{title:'More',tabBarIcon:({color})=><MoreHorizontal size={21} color={color}/>}}/></Tabs>; }

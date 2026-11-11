@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "ParkEase",
+    "slug": "parkease",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "parkease",
+    "plugins": [
+      ["expo-router", {"origin": false}],
+      ["expo-camera", {"cameraPermission": "ParkEase uses the camera to scan plates and exit QR codes."}],
+      "expo-sqlite",
+      "expo-document-picker",
+      "./plugins/withParkEasePrinter"
+    ],
+    "android": {
+      "package": "com.parkease.app",
+      "permissions": ["CAMERA", "BLUETOOTH", "BLUETOOTH_CONNECT", "BLUETOOTH_SCAN"]
+    },
+    "experiments": {"typedRoutes": true}
+  }
+}

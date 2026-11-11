@@ -1,0 +1,7 @@
+import { useRouter } from 'expo-router';
+import { Gift, Plus, Share2 } from 'lucide-react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Button } from '@/src/components/ui';
+import { colors, common, spacing } from '@/src/theme';
+
+export default function Referrals(){const router=useRouter();return <ScrollView style={common.screen} contentContainerStyle={common.content}><Pressable onPress={()=>router.back()}><Text style={{color:colors.primary,fontWeight:'700'}}>‹  Settings</Text></Pressable><Text style={[common.title,{marginTop:spacing.lg}]}>Referral dashboard</Text><Text style={[common.muted,{marginTop:5}]}>Referral rewards are verified and signed by the software owner.</Text><View style={[common.card,{marginTop:spacing.xl,alignItems:'center',gap:8,paddingVertical:26}]}><Gift size={35} color={colors.primary}/><Text style={common.h2}>No referral codes imported</Text><Text style={[common.muted,{textAlign:'center'}]}>Your vendor can provide two invitation codes and a signed reward certificate.</Text><Button title="Import signed reward" variant="outline" onPress={()=>{}}/></View><View style={{marginTop:spacing.xl,gap:10}}><Text style={common.label}>REWARD POLICY</Text><View style={common.card}><Text style={common.body}>Rewards are not calculated from offline claims. Only a newly signed vendor certificate can apply a discount.</Text></View></View></ScrollView>}

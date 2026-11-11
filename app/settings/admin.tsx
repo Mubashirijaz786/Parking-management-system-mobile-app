@@ -1,0 +1,3 @@
+import { Redirect } from 'expo-router';
+
+export default function AdminEntry() { return <Redirect href={'/admin/login' as any} />; }
